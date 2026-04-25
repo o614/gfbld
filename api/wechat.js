@@ -26,7 +26,7 @@ function handleRegionSwitch(regionInput) {
   const rawUrl = `itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/resetAndRedirect?dsf=${dsf}&cc=${regionCode}`;
   const qrUrl = `https://quickchart.io/qr?size=400&margin=2&text=${encodeURIComponent(rawUrl)}`;
 
-  return `注意！仅限浏览，下载需注册对应账号。\n请长按复制下方蓝字去 Safari 浏览器地址栏粘贴并打开。\n\n` +
+  return `注意！仅限浏览，下载需对应账号。\n请长按复制下方蓝字去 Safari 浏览器地址栏粘贴并打开。\n\n` +
     `地区【${trimmed}】：\n` +
     `<a href="weixin://">${rawUrl}</a>\n\n` +
     `若无法复制，可提取备用码。\n` +
