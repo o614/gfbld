@@ -26,7 +26,7 @@ function handleRegionSwitch(regionInput) {
   const rawUrl = `itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/resetAndRedirect?dsf=${dsf}&cc=${regionCode}`;
   const qrUrl = `https://quickchart.io/qr?size=400&margin=2&text=${encodeURIComponent(rawUrl)}`;
 
-  return `注意！仅限浏览，下载需对应账号。\n请长按复制下方蓝字去 Safari 浏览器地址栏粘贴并打开。\n\n` +
+  return `注意！仅浏览，下载需对应账号。\n\n请长按复制下方蓝字去 Safari 浏览器地址栏粘贴并打开。\n\n` +
     `地区【${trimmed}】：\n` +
     `<a href="weixin://">${rawUrl}</a>\n\n` +
     `若无法复制，可提取备用码。\n` +
@@ -62,7 +62,7 @@ module.exports = async (req, res) => {
 
       // 关注回复
       if (message.MsgType === 'event' && message.Event === 'subscribe') {
-        replyContent = '欢迎关注！\n请直接回复“切换+地区名称”，例如：\n\n切换美国\n切换日本';
+        replyContent = '请直接回复“切换+地区名称”，例如：\n\n切换美国\n切换日本\n切换香港';
       } 
       // 文本回复
       else if (message.MsgType === 'text' && typeof message.Content === 'string') {
