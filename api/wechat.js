@@ -31,7 +31,7 @@ function handleRegionSwitch(regionInput) {
     `<a href="weixin://">${rawUrl}</a>\n\n` +
     `若无法复制，可提取备用码。\n` +
     `› <a href="${qrUrl}">点击提取</a>\n\n` +
-    `*更多功能👉 #公众号：不要艾特我\n`;
+    `更多功能 👉 #公众号：不要艾特我\n`;
 }
 
 // Vercel Serverless 入口
@@ -62,7 +62,7 @@ module.exports = async (req, res) => {
 
       // 关注回复
       if (message.MsgType === 'event' && message.Event === 'subscribe') {
-        replyContent = '欢迎关注！请直接回复“切换+地区名称”，例如：\n\n切换 美国\n切换 日本';
+        replyContent = '欢迎关注！\n\n请直接回复“切换+地区名称”，例如：\n\n切换美国\n切换日本';
       } 
       // 文本回复
       else if (message.MsgType === 'text' && typeof message.Content === 'string') {
@@ -72,7 +72,7 @@ module.exports = async (req, res) => {
         if (match && match[2]) {
           replyContent = handleRegionSwitch(match[2]);
         } else if (content.includes('切换')) {
-            replyContent = '格式不正确哦，请发送例如：切换 美国';
+            replyContent = '格式不正确哦，请发送例如：切换美国';
         }
       }
 
