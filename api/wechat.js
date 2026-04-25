@@ -31,7 +31,7 @@ function handleRegionSwitch(regionInput) {
     `<a href="weixin://">${rawUrl}</a>\n\n` +
     `若无法复制，可提取备用码。\n` +
     `› <a href="${qrUrl}">点击提取</a>\n\n` +
-    `*数据来源：#公众号：不要艾特我\n`;
+    `*更多功能👉 #公众号：不要艾特我\n`;
 }
 
 // Vercel Serverless 入口
