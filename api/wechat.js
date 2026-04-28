@@ -61,9 +61,13 @@ module.exports = async (req, res) => {
       let replyContent = '';
 
       // 关注回复
-      if (message.MsgType === 'event' && message.Event === 'subscribe') {
-        replyContent = '请直接回复“切换+地区名称”，例如：\n\n切换美国\n切换日本\n切换香港';
-      } 
+if (message.MsgType === 'event' && message.Event === 'subscribe') {
+  // 注意把 appid 换成你自己的，path 换成具体的页面路径
+  replyContent = 
+    '感谢关注~\n\n' +
+    '👉 <a data-miniprogram-appid="wxe11457a5107f16cc" data-miniprogram-path="pages/index/index" href="https://zhihu.com">点击此处快速换区</a>\n\n' +
+    '您也可以使用文本指令：\n请直接回复“切换+地区名称”，例如：\n切换美国\n切换日本\n切换香港';
+}
       // 文本回复
       else if (message.MsgType === 'text' && typeof message.Content === 'string') {
         const content = message.Content.trim();
